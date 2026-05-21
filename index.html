@@ -728,7 +728,8 @@
 
     class="
     relative
-    min-h-[88vh]
+   min-h-screen
+   lg:min-h-[88vh]
     flex
     items-center
     overflow-hidden
@@ -764,6 +765,8 @@
       px-6
       grid
       lg:grid-cols-2
+      gap-16
+      lg:gap-4
       gap-4
       items-center
       relative
@@ -779,7 +782,7 @@
 
       <!-- ================= LEFT SIDE ================= -->
 
-      <div class="reveal">
+     <div class="reveal text-center lg:text-left">
 
         <!-- SMALL TAG -->
 
@@ -924,10 +927,12 @@
 
         <div
           class="
-          flex
-          flex-wrap
-          gap-4
-          mt-8
+         flex
+         flex-wrap
+         justify-center
+        lg:justify-start
+        gap-4
+        mt-8
           "
         >
 
@@ -997,10 +1002,12 @@
 
         <div
           class="
-          flex
-          items-center
-          gap-3
-          mt-8
+flex
+items-center
+justify-center
+lg:justify-start
+gap-3
+mt-8
           "
         >
 
@@ -1145,8 +1152,10 @@
           class="
           relative
           w-full
-          max-w-[400px]
-          h-[480px]
+max-w-[320px]
+sm:max-w-[380px]
+h-[380px]
+sm:h-[480px]
           flex
           items-center
           justify-center
@@ -1161,8 +1170,10 @@
           <div
             class="
             absolute
-            w-[450px]
-            h-[450px]
+w-[280px]
+h-[280px]
+sm:w-[450px]
+sm:h-[450px]
             rounded-full
             bg-[#b7f36b]/30
             blur-[120px]
@@ -1179,8 +1190,10 @@
           <div
             class="
             absolute
-            w-[600px]
-            h-[600px]
+w-[320px]
+h-[320px]
+sm:w-[600px]
+sm:h-[600px]
             rounded-full
             border
             border-[#b7f36b]/10
@@ -1197,8 +1210,10 @@
           <div
             class="
             absolute
-            w-[500px]
-            h-[500px]
+w-[240px]
+h-[240px]
+sm:w-[500px]
+sm:h-[500px]
             rounded-full
             border
             border-[#b7f36b]/10
@@ -1218,8 +1233,10 @@
           <div
             class="
             float-icon
-            top-10
-            right-0
+top-2
+right-2
+sm:top-10
+sm:right-0
             w-[90px]
             h-[90px]
             flex-col
@@ -1256,8 +1273,10 @@
           <div
             class="
             float-icon
-            bottom-8
-            -right-12
+bottom-0
+right-0
+sm:bottom-8
+sm:-right-12
             w-[95px]
             h-[90px]
             flex-col
@@ -1294,8 +1313,10 @@
           <div
             class="
             float-icon
-            -left-11
-            top-[34%]
+left-0
+top-[30%]
+sm:-left-11
+sm:top-[34%]
             w-[95px]
             h-[90px]
             flex-col
@@ -1321,19 +1342,15 @@
 
 
 
-
-
-
-
-
-
           <!-- DATABASE CARD -->
 
           <div
             class="
             float-icon
-            -left-12
-            bottom-6
+left-0
+bottom-0
+sm:-left-12
+sm:bottom-6
             w-[95px]
             h-[90px]
             flex-col
@@ -1375,7 +1392,8 @@
             relative
             z-10
             w-full
-            max-w-[380px]
+max-w-[240px]
+sm:max-w-[380px]
             object-contain
             drop-shadow-[0_25px_80px_rgba(0,0,0,0.75)]
             "
