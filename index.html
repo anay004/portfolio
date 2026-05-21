@@ -1,0 +1,5452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- ================= META ================= -->
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    ANAY CHOWDHURY | Portfolio
+  </title>
+
+
+
+  <!-- ================= TAILWIND CSS ================= -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+  <!-- ================= GOOGLE FONT ================= -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+
+  <!-- ================= CUSTOM CSS ================= -->
+
+  <style>
+
+    /* ================= RESET ================= */
+
+    *{
+
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+
+    }
+
+
+
+    /* ================= HTML ================= */
+
+    html{
+
+      scroll-behavior:smooth;
+
+    }
+
+
+
+    /* ================= BODY ================= */
+
+    body{
+
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+
+    }
+
+
+
+    /* ================= SELECTION ================= */
+
+    ::selection{
+
+      background:#b7f36b;
+      color:#050816;
+
+    }
+
+
+
+    /* ================= SCROLLBAR ================= */
+
+    ::-webkit-scrollbar{
+
+      width:7px;
+
+    }
+
+    ::-webkit-scrollbar-track{
+
+      background:#050816;
+
+    }
+
+    ::-webkit-scrollbar-thumb{
+
+      background:#b7f36b;
+      border-radius:999px;
+
+    }
+
+
+
+    /* ================= MAIN BACKGROUND ================= */
+
+    .main-bg{
+
+      background:
+      radial-gradient(circle at top left, rgba(183,243,107,0.10), transparent 26%),
+      radial-gradient(circle at top right, rgba(183,243,107,0.07), transparent 22%),
+      radial-gradient(circle at bottom right, rgba(183,243,107,0.05), transparent 24%),
+      #050816;
+
+    }
+
+
+
+    /* ================= GLASS EFFECT ================= */
+
+    .glass{
+
+      background:rgba(10,14,30,0.58);
+
+      backdrop-filter:blur(18px);
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      box-shadow:
+      0 10px 40px rgba(0,0,0,0.25);
+
+    }
+
+
+
+    /* ================= ACCENT TEXT ================= */
+
+    .accent-text{
+
+      color:#b7f36b;
+
+    }
+
+
+
+    /* ================= NAVBAR LINK ================= */
+
+    .nav-link{
+
+      position:relative;
+
+      transition:0.3s;
+
+    }
+
+    .nav-link::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      bottom:-7px;
+
+      width:0%;
+      height:2px;
+
+      background:#b7f36b;
+
+      transition:0.3s;
+
+    }
+
+    .nav-link:hover{
+
+      color:#b7f36b;
+
+    }
+
+    .nav-link:hover::after{
+
+      width:100%;
+
+    }
+
+    .nav-link.active{
+
+      color:#b7f36b;
+
+    }
+
+    .nav-link.active::after{
+
+      width:100%;
+
+    }
+
+
+
+    /* ================= MOBILE MENU ================= */
+
+    .mobile-menu{
+
+      max-height:0;
+
+      overflow:hidden;
+
+      transition:max-height 0.4s ease;
+
+    }
+
+    .mobile-menu.open{
+
+      max-height:500px;
+
+    }
+
+
+
+    /* ================= REVEAL ================= */
+
+    .reveal{
+
+      opacity:0;
+
+      transform:translateY(60px);
+
+      transition:1s ease;
+
+    }
+
+    .reveal.show{
+
+      opacity:1;
+
+      transform:translateY(0px);
+
+    }
+
+
+
+    /* ================= FLOATING ================= */
+
+    .floating{
+
+      animation:float 4s ease-in-out infinite;
+
+    }
+
+    @keyframes float{
+
+      0%,100%{
+
+        transform:translateY(0px);
+
+      }
+
+      50%{
+
+        transform:translateY(-12px);
+
+      }
+
+    }
+
+
+
+    /* ================= HERO ORB ================= */
+
+    .hero-orb{
+
+      position:absolute;
+
+      border-radius:9999px;
+
+      filter:blur(50px);
+
+      opacity:0.5;
+
+      pointer-events:none;
+
+    }
+
+
+
+    /* ================= BUTTON ================= */
+
+    .primary-btn{
+
+      background:#b7f36b;
+
+      color:#050816;
+
+      transition:0.3s;
+
+    }
+
+    .primary-btn:hover{
+
+      transform:translateY(-3px);
+
+      box-shadow:
+      0 15px 40px rgba(183,243,107,0.18);
+
+    }
+
+
+
+    /* ================= SECONDARY BUTTON ================= */
+
+    .secondary-btn{
+
+      border:1px solid rgba(183,243,107,0.20);
+
+      color:#d8ffad;
+
+      transition:0.3s;
+
+    }
+
+    .secondary-btn:hover{
+
+      background:rgba(183,243,107,0.06);
+
+      transform:translateY(-3px);
+
+    }
+
+
+
+    /* ================= FLOAT ICON ================= */
+
+    .float-icon{
+
+      position:absolute;
+
+      border-radius:1.4rem;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      background:rgba(13,18,38,0.78);
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      backdrop-filter:blur(14px);
+
+      box-shadow:
+      0 10px 30px rgba(0,0,0,0.28);
+
+    }
+
+
+
+    /* ================= SOCIAL ICON ================= */
+
+    .social-icon{
+
+      transition:0.3s;
+
+    }
+
+    .social-icon:hover{
+
+      transform:translateY(-4px);
+
+      border-color:rgba(183,243,107,0.35);
+
+      color:#b7f36b;
+
+    }
+
+
+
+    /* ================= STATS CARD ================= */
+
+    .stats-card{
+
+      transition:0.3s;
+
+    }
+
+    .stats-card:hover{
+
+      transform:translateY(-5px);
+
+      border-color:rgba(183,243,107,0.15);
+
+    }
+
+
+
+    /* ================= PROJECT CARD ================= */
+
+    .project-card{
+
+      transition:0.4s ease;
+
+    }
+
+    .project-card:hover{
+
+      transform:
+      translateY(-10px)
+      scale(1.02);
+
+      border-color:rgba(183,243,107,0.20);
+
+      box-shadow:
+      0 20px 60px rgba(183,243,107,0.06);
+
+    }
+
+
+
+    /* ================= SKILL TAG ================= */
+
+    .skill-tag{
+
+      transition:0.3s;
+
+    }
+
+    .skill-tag:hover{
+
+      transform:translateY(-3px);
+
+      border-color:rgba(183,243,107,0.20);
+
+      background:rgba(183,243,107,0.06);
+
+    }
+
+
+
+    /* ================= EXPERIENCE CARD ================= */
+
+    .experience-card{
+
+      transition:0.4s ease;
+
+    }
+
+    .experience-card:hover{
+
+      transform:translateY(-8px);
+
+      border-color:rgba(183,243,107,0.15);
+
+    }
+
+
+
+    /* ================= INPUT ================= */
+
+    .input-field{
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      transition:0.3s;
+
+    }
+
+    .input-field:focus{
+
+      outline:none;
+
+      border-color:#b7f36b;
+
+      box-shadow:
+      0 0 0 4px rgba(183,243,107,0.06);
+
+    }
+
+  </style>
+
+</head>
+
+<body class="main-bg">
+
+  <!-- ================= NAVBAR ================= -->
+
+  <header
+    class="
+    fixed
+    top-0
+    left-0
+    w-full
+    z-50
+    "
+  >
+
+    <nav
+      class="
+      max-w-7xl
+      mx-auto
+      px-4
+      sm:px-6
+      pt-4
+      "
+    >
+
+      <div
+        class="
+        glass
+        rounded-full
+        px-5
+        sm:px-7
+        py-3
+        flex
+        items-center
+        justify-between
+        "
+      >
+
+        <!-- LOGO -->
+
+        <a
+          href="#home"
+
+          class="
+          text-2xl
+          font-extrabold
+          tracking-wide
+          "
+        >
+
+          ANAY<span class="accent-text">.</span>
+
+        </a>
+
+
+
+
+
+        <!-- DESKTOP MENU -->
+
+        <ul
+          class="
+          hidden
+          md:flex
+          items-center
+          gap-7
+          text-[11px]
+          font-medium
+          text-gray-200
+          "
+        >
+
+          <li>
+            <a href="#home" class="nav-link active">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#about" class="nav-link">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#experience" class="nav-link">
+              Experience
+            </a>
+          </li>
+
+          <li>
+            <a href="#projects" class="nav-link">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="#skills" class="nav-link">
+              Skills
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact" class="nav-link">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+
+
+
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="flex items-center gap-3">
+
+          <button
+            class="
+            hidden
+            md:flex
+            w-9
+            h-9
+            rounded-full
+            glass
+            items-center
+            justify-center
+            text-sm
+            "
+          >
+            ☾
+          </button>
+
+
+
+
+
+          <button
+            id="menuBtn"
+
+            class="
+            md:hidden
+            text-3xl
+            text-white
+            "
+          >
+            ☰
+          </button>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+
+
+
+
+
+
+    <!-- ================= MOBILE MENU ================= -->
+
+    <div
+      id="mobileMenu"
+
+      class="
+      mobile-menu
+      md:hidden
+      mx-4
+      mt-3
+      glass
+      rounded-3xl
+      "
+    >
+
+      <ul
+        class="
+        flex
+        flex-col
+        text-center
+        py-6
+        gap-6
+        text-gray-200
+        "
+      >
+
+        <li>
+          <a href="#home" class="mobile-link">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#about" class="mobile-link">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#experience" class="mobile-link">
+            Experience
+          </a>
+        </li>
+
+        <li>
+          <a href="#projects" class="mobile-link">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills" class="mobile-link">
+            Skills
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact" class="mobile-link">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </header>
+
+
+
+
+
+
+
+
+
+  <!-- ================= HERO SECTION ================= -->
+
+  <section
+    id="home"
+
+    class="
+    relative
+    min-h-[88vh]
+    flex
+    items-center
+    overflow-hidden
+    pt-24
+    "
+  >
+
+    <!-- ================= BACKGROUND GLOW ================= -->
+
+    <div
+      class="
+      hero-orb
+      w-[320px]
+      h-[320px]
+      bg-[#b7f36b]/10
+      top-[80px]
+      right-[18%]
+      "
+    ></div>
+
+
+
+
+
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div
+      class="
+      max-w-7xl
+      mx-auto
+      px-6
+      grid
+      lg:grid-cols-2
+      gap-4
+      items-center
+      relative
+      z-10
+      "
+    >
+
+
+
+
+
+
+
+      <!-- ================= LEFT SIDE ================= -->
+
+      <div class="reveal">
+
+        <!-- SMALL TAG -->
+
+        <div
+          class="
+          inline-flex
+          items-center
+          gap-2
+          px-4
+          py-2
+          rounded-full
+          glass
+          text-[10px]
+          text-[#d8ffad]
+          mb-6
+          tracking-wide
+          "
+        >
+
+          <span
+            class="
+            w-2
+            h-2
+            rounded-full
+            bg-[#b7f36b]
+            "
+          ></span>
+
+          CSE STUDENT & FLUTTER DEVELOPER
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- MAIN TITLE -->
+
+        <h1
+          class="
+          text-4xl
+          sm:text-5xl
+          lg:text-6xl
+          font-extrabold
+          leading-[1.0]
+          tracking-tight
+          mb-4
+          "
+        >
+
+          Hi, I’m
+
+          <br>
+
+          <span class="accent-text">
+            Anay
+          </span>
+
+          Chowdhury
+
+        </h1>
+
+
+
+
+
+
+
+
+        <!-- SUBTITLE -->
+
+        <div
+          class="
+          flex
+          items-center
+          gap-3
+          text-gray-300
+          text-sm
+          mb-6
+          flex-wrap
+          "
+        >
+
+          <span>
+            Problem Solver
+          </span>
+
+          <span class="accent-text">
+            •
+          </span>
+
+          <span>
+            Developer
+          </span>
+
+          <span class="accent-text">
+            •
+          </span>
+
+          <span>
+            Learner
+          </span>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- DESCRIPTION -->
+
+        <p
+          class="
+          text-gray-400
+          leading-relaxed
+          text-[13px]
+          max-w-[520px]
+          "
+        >
+
+          Computer Science and Engineering student passionate about
+          Flutter app development, problem-solving, and modern software
+          technologies. I build fast, beautiful, and functional apps
+          with clean code and great user experience.
+
+        </p>
+
+
+
+
+
+
+
+
+        <!-- BUTTONS -->
+
+        <div
+          class="
+          flex
+          flex-wrap
+          gap-4
+          mt-8
+          "
+        >
+
+          <!-- PRIMARY -->
+
+          <a
+            href="#projects"
+
+            class="
+            primary-btn
+            px-6
+            py-3
+            rounded-xl
+            text-sm
+            font-semibold
+            inline-flex
+            items-center
+            gap-2
+            "
+          >
+
+            View My Work
+
+          </a>
+
+
+
+
+
+
+
+
+          <!-- SECONDARY -->
+
+          <a
+            href="./asset/ANAY_CHOWDHURY_CV.pdf"
+
+            target="_blank"
+
+            class="
+            secondary-btn
+            px-6
+            py-3
+            rounded-xl
+            text-sm
+            font-semibold
+            inline-flex
+            items-center
+            gap-2
+            "
+          >
+
+            Download CV
+
+          </a>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- SOCIALS -->
+
+        <div
+          class="
+          flex
+          items-center
+          gap-3
+          mt-8
+          "
+        >
+
+<a
+  href="https://github.com/anay004"
+
+  target="_blank"
+
+  class="
+  social-icon
+  glass
+  w-11
+  h-11
+  rounded-xl
+  flex
+  items-center
+  justify-center
+  text-sm
+  "
+>
+
+  <img
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+
+    class="
+    w-5
+    h-5
+    invert
+    "
+  >
+
+</a>
+
+
+
+
+
+
+
+          <a
+            href="https://linkedin.com/in/anay-chowdhury"
+
+            target="_blank"
+
+            class="
+            social-icon
+            glass
+            w-11
+            h-11
+            rounded-xl
+            flex
+            items-center
+            justify-center
+            text-sm
+            "
+          >
+            in
+          </a>
+
+
+
+
+
+
+
+
+          <a
+            href="mailto:anaychowdhury10@gmail.com"
+
+            class="
+            social-icon
+            glass
+            w-11
+            h-11
+            rounded-xl
+            flex
+            items-center
+            justify-center
+            text-sm
+            "
+          >
+            ✉
+          </a>
+
+
+
+
+
+
+
+
+<a
+  href="https://www.facebook.com/Anayyy10"
+
+  target="_blank"
+
+  class="
+  social-icon
+  glass
+  w-11
+  h-11
+  rounded-xl
+  flex
+  items-center
+  justify-center
+  text-sm
+  "
+>
+  f
+</a>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- ================= RIGHT SIDE ================= -->
+
+      <div
+        class="
+        reveal
+        relative
+        flex
+        justify-center
+        lg:justify-end
+        "
+      >
+
+        <!-- MAIN WRAPPER -->
+
+        <div
+          class="
+          relative
+          w-full
+          max-w-[400px]
+          h-[480px]
+          flex
+          items-center
+          justify-center
+          "
+        >
+
+
+
+
+          <!-- MAIN GLOW -->
+
+          <div
+            class="
+            absolute
+            w-[450px]
+            h-[450px]
+            rounded-full
+            bg-[#b7f36b]/30
+            blur-[120px]
+            "
+          ></div>
+
+
+
+
+
+
+          <!-- OUTER RING -->
+
+          <div
+            class="
+            absolute
+            w-[600px]
+            h-[600px]
+            rounded-full
+            border
+            border-[#b7f36b]/10
+            "
+          ></div>
+
+
+
+
+
+
+          <!-- INNER RING -->
+
+          <div
+            class="
+            absolute
+            w-[500px]
+            h-[500px]
+            rounded-full
+            border
+            border-[#b7f36b]/10
+            "
+          ></div>
+
+
+
+
+
+
+
+
+
+          <!-- FLUTTER CARD -->
+
+          <div
+            class="
+            float-icon
+            top-10
+            right-0
+            w-[90px]
+            h-[90px]
+            flex-col
+            gap-2
+            "
+          >
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+
+              class="
+              w-9
+              h-9
+              "
+            >
+
+            <span class="text-xs">
+              Flutter
+            </span>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <!-- PYTHON CARD -->
+
+          <div
+            class="
+            float-icon
+            bottom-8
+            -right-12
+            w-[95px]
+            h-[90px]
+            flex-col
+            gap-2
+            "
+          >
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+
+              class="
+              w-9
+              h-9
+              "
+            >
+
+            <span class="text-xs">
+              Python
+            </span>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <!-- CODE CARD -->
+
+          <div
+            class="
+            float-icon
+            -left-11
+            top-[34%]
+            w-[95px]
+            h-[90px]
+            flex-col
+            gap-2
+            "
+          >
+
+            <span
+              class="
+              text-3xl
+              accent-text
+              "
+            >
+              &lt;/&gt;
+            </span>
+
+            <span class="text-xs">
+              Code
+            </span>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <!-- DATABASE CARD -->
+
+          <div
+            class="
+            float-icon
+            -left-12
+            bottom-6
+            w-[95px]
+            h-[90px]
+            flex-col
+            gap-5
+            "
+          >
+
+            <span
+              class="
+              text-3xl
+              accent-text
+              "
+            >
+              ⛁
+            </span>
+
+            <span class="text-xs">
+              Database
+            </span>
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <!-- MAIN IMAGE -->
+
+          <img
+            src="./asset/anay.png"
+
+            alt="Anay Chowdhury"
+
+            class="
+            relative
+            z-10
+            w-full
+            max-w-[380px]
+            object-contain
+            drop-shadow-[0_25px_80px_rgba(0,0,0,0.75)]
+            "
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= STATS SECTION ================= -->
+
+  <section
+    class="
+    relative
+    -mt-10
+    z-20
+    "
+  >
+
+    <div
+      class="
+      max-w-7xl
+      mx-auto
+      px-6
+      "
+    >
+
+      <div
+        class="
+        glass
+        rounded-[2rem]
+        p-8
+        grid
+        md:grid-cols-2
+        lg:grid-cols-4
+        gap-8
+        "
+      >
+
+
+
+        <!-- ================= STAT 1 ================= -->
+
+        <div
+          class="
+          stats-card
+          flex
+          items-center
+          gap-5
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            min-w-[70px]
+            h-[70px]
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            "
+          >
+            🎓
+          </div>
+
+
+
+          <!-- CONTENT -->
+
+          <div>
+
+            <h3
+              class="
+              text-4xl
+              font-extrabold
+              accent-text
+              mb-1
+              "
+            >
+              3.373
+            </h3>
+
+            <p
+              class="
+              text-gray-300
+              font-medium
+              "
+            >
+              CGPA
+            </p>
+
+            <p
+              class="
+              text-sm
+              text-gray-500
+              mt-1
+              "
+            >
+              on a scale of 4.00
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <!-- ================= STAT 2 ================= -->
+
+        <div
+          class="
+          stats-card
+          flex
+          items-center
+          gap-5
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            min-w-[70px]
+            h-[70px]
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            "
+          >
+            📁
+          </div>
+
+
+
+          <!-- CONTENT -->
+
+          <div>
+
+            <h3
+              class="
+              text-4xl
+              font-extrabold
+              accent-text
+              mb-1
+              "
+            >
+              10+
+            </h3>
+
+            <p
+              class="
+              text-gray-300
+              font-medium
+              "
+            >
+              Projects
+            </p>
+
+            <p
+              class="
+              text-sm
+              text-gray-500
+              mt-1
+              "
+            >
+              Completed
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <!-- ================= STAT 3 ================= -->
+
+        <div
+          class="
+          stats-card
+          flex
+          items-center
+          gap-5
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            min-w-[70px]
+            h-[70px]
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            "
+          >
+            🏆
+          </div>
+
+
+
+          <!-- CONTENT -->
+
+          <div>
+
+            <h3
+              class="
+              text-4xl
+              font-extrabold
+              accent-text
+              mb-1
+              "
+            >
+              2+
+            </h3>
+
+            <p
+              class="
+              text-gray-300
+              font-medium
+              "
+            >
+              Years
+            </p>
+
+            <p
+              class="
+              text-sm
+              text-gray-500
+              mt-1
+              "
+            >
+              Experience
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <!-- ================= STAT 4 ================= -->
+
+        <div
+          class="
+          stats-card
+          flex
+          items-center
+          gap-5
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            min-w-[70px]
+            h-[70px]
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            "
+          >
+            👥
+          </div>
+
+
+
+          <!-- CONTENT -->
+
+          <div>
+
+            <h3
+              class="
+              text-3xl
+              font-bold
+              accent-text
+              mb-1
+              "
+            >
+              Team Player
+            </h3>
+
+            <p
+              class="
+              text-sm
+              text-gray-400
+              "
+            >
+              Leadership & Collaboration
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ================= ABOUT SECTION ================= -->
+
+  <section
+    id="about"
+
+    class="
+    py-28
+    relative
+    overflow-hidden
+    "
+  >
+
+    <!-- BACKGROUND ORB -->
+
+    <div
+      class="
+      hero-orb
+      w-[350px]
+      h-[350px]
+      bg-[#b7f36b]/5
+      top-[-120px]
+      right-[-120px]
+      "
+    ></div>
+
+
+
+
+
+    <!-- MAIN CONTAINER -->
+
+    <div
+      class="
+      max-w-7xl
+      mx-auto
+      px-6
+      grid
+      lg:grid-cols-2
+      gap-16
+      items-center
+      relative
+      z-10
+      "
+    >
+
+
+
+
+      <!-- ================= LEFT SIDE ================= -->
+
+      <div class="reveal">
+
+        <!-- SMALL TITLE -->
+
+        <p
+          class="
+          uppercase
+          tracking-[4px]
+          text-sm
+          accent-text
+          font-semibold
+          mb-5
+          "
+        >
+          About Me
+        </p>
+
+
+
+
+        <!-- HEADING -->
+
+        <h2
+          class="
+          text-5xl
+          sm:text-6xl
+          font-extrabold
+          leading-tight
+          mb-8
+          "
+        >
+
+          Get to know
+
+          <span class="accent-text">
+            me
+          </span>
+
+        </h2>
+
+
+
+
+        <!-- DESCRIPTION 1 -->
+
+        <p
+          class="
+          text-gray-300
+          leading-relaxed
+          text-lg
+          mb-6
+          "
+        >
+
+          I am a Computer Science and Engineering student at IIUC
+          with a strong interest in mobile application development,
+          software engineering, and problem-solving.
+
+        </p>
+
+
+
+
+        <!-- DESCRIPTION 2 -->
+
+        <p
+          class="
+          text-gray-400
+          leading-relaxed
+          text-lg
+          mb-10
+          "
+        >
+
+          My experience includes Flutter application development,
+          Firebase integration, database management, and collaborative
+          software projects. I enjoy building user-friendly applications
+          and continuously improving my technical skills through academic
+          projects, competitions, and practical development work.
+
+        </p>
+
+
+
+
+        <!-- BUTTON -->
+
+        <a
+          href="#projects"
+
+          class="
+          secondary-btn
+          inline-flex
+          items-center
+          gap-3
+          px-8
+          py-4
+          rounded-2xl
+          font-semibold
+          "
+        >
+
+          More About Me
+
+          <span class="text-lg">
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+
+
+
+
+
+      <!-- ================= RIGHT SIDE ================= -->
+
+      <div
+        class="
+        glass
+        rounded-[2rem]
+        p-8
+        reveal
+        "
+      >
+
+        <!-- INFO GRID -->
+
+        <div class="space-y-6">
+
+
+
+
+          <!-- ITEM 1 -->
+
+          <div
+            class="
+            flex
+            items-center
+            justify-between
+            border-b
+            border-white/5
+            pb-5
+            "
+          >
+
+            <div
+              class="
+              flex
+              items-center
+              gap-4
+              "
+            >
+
+              <div
+                class="
+                w-12
+                h-12
+                rounded-xl
+                bg-[#b7f36b]/10
+                flex
+                items-center
+                justify-center
+                accent-text
+                "
+              >
+                👤
+              </div>
+
+              <span class="font-medium">
+                Name
+              </span>
+
+            </div>
+
+            <span class="text-gray-300">
+              Anay Chowdhury
+            </span>
+
+          </div>
+
+
+
+
+
+          <!-- ITEM 2 -->
+
+          <div
+            class="
+            flex
+            items-center
+            justify-between
+            border-b
+            border-white/5
+            pb-5
+            "
+          >
+
+            <div
+              class="
+              flex
+              items-center
+              gap-4
+              "
+            >
+
+              <div
+                class="
+                w-12
+                h-12
+                rounded-xl
+                bg-[#b7f36b]/10
+                flex
+                items-center
+                justify-center
+                accent-text
+                "
+              >
+                ✉
+              </div>
+
+              <span class="font-medium">
+                Email
+              </span>
+
+            </div>
+
+            <span class="text-gray-300">
+              anaychowdhury10@gmail.com
+            </span>
+
+          </div>
+
+
+
+
+
+
+          <!-- ITEM 3 -->
+
+          <div
+            class="
+            flex
+            items-center
+            justify-between
+            border-b
+            border-white/5
+            pb-5
+            "
+          >
+
+            <div
+              class="
+              flex
+              items-center
+              gap-4
+              "
+            >
+
+              <div
+                class="
+                w-12
+                h-12
+                rounded-xl
+                bg-[#b7f36b]/10
+                flex
+                items-center
+                justify-center
+                accent-text
+                "
+              >
+                ☎
+              </div>
+
+              <span class="font-medium">
+                Phone
+              </span>
+
+            </div>
+
+            <span class="text-gray-300">
+              +880 1791 621 773
+            </span>
+
+          </div>
+
+
+
+
+
+
+          <!-- ITEM 4 -->
+
+          <div
+            class="
+            flex
+            items-center
+            justify-between
+            border-b
+            border-white/5
+            pb-5
+            "
+          >
+
+            <div
+              class="
+              flex
+              items-center
+              gap-4
+              "
+            >
+
+              <div
+                class="
+                w-12
+                h-12
+                rounded-xl
+                bg-[#b7f36b]/10
+                flex
+                items-center
+                justify-center
+                accent-text
+                "
+              >
+                ⌖
+              </div>
+
+              <span class="font-medium">
+                Location
+              </span>
+
+            </div>
+
+            <span class="text-gray-300">
+              Chittagong, Bangladesh
+            </span>
+
+          </div>
+
+
+
+
+
+
+
+          <!-- ITEM 5 -->
+
+          <div
+            class="
+            flex
+            items-center
+            justify-between
+            border-b
+            border-white/5
+            pb-5
+            "
+          >
+
+            <div
+              class="
+              flex
+              items-center
+              gap-4
+              "
+            >
+
+              <div
+                class="
+                w-12
+                h-12
+                rounded-xl
+                bg-[#b7f36b]/10
+                flex
+                items-center
+                justify-center
+                accent-text
+                "
+              >
+                🎓
+              </div>
+
+              <span class="font-medium">
+                Education
+              </span>
+
+            </div>
+
+            <span class="text-gray-300">
+              BSc in CSE, IIUC
+            </span>
+
+          </div>
+
+
+
+
+
+
+
+          <!-- ITEM 6 -->
+
+          <div
+            class="
+            flex
+            items-center
+            justify-between
+            "
+          >
+
+            <div
+              class="
+              flex
+              items-center
+              gap-4
+              "
+            >
+
+              <div
+                class="
+                w-12
+                h-12
+                rounded-xl
+                bg-[#b7f36b]/10
+                flex
+                items-center
+                justify-center
+                accent-text
+                "
+              >
+                🌐
+              </div>
+
+              <span class="font-medium">
+                Languages
+              </span>
+
+            </div>
+
+            <span class="text-gray-300">
+              Bangla, English, Hindi
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= EXPERIENCE SECTION ================= -->
+
+  <section
+    id="experience"
+
+    class="
+    py-28
+    relative
+    overflow-hidden
+    "
+  >
+
+    <!-- ================= BACKGROUND EFFECT ================= -->
+
+    <div
+      class="
+      hero-orb
+      w-[400px]
+      h-[400px]
+      bg-[#b7f36b]/5
+      bottom-[-150px]
+      right-[-150px]
+      "
+    ></div>
+
+
+
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div
+      class="
+      max-w-7xl
+      mx-auto
+      px-6
+      relative
+      z-10
+      "
+    >
+
+
+
+
+      <!-- ================= SECTION TITLE ================= -->
+
+      <div
+        class="
+        text-center
+        mb-20
+        reveal
+        "
+      >
+
+        <!-- SMALL TITLE -->
+
+        <p
+          class="
+          uppercase
+          tracking-[4px]
+          text-sm
+          accent-text
+          font-semibold
+          mb-5
+          "
+        >
+          Experience
+        </p>
+
+
+
+
+        <!-- MAIN TITLE -->
+
+        <h2
+          class="
+          text-5xl
+          sm:text-6xl
+          font-extrabold
+          "
+        >
+
+          My
+
+          <span class="accent-text">
+            Journey
+          </span>
+
+        </h2>
+
+      </div>
+
+
+
+
+
+
+
+      <!-- ================= EXPERIENCE GRID ================= -->
+
+      <div
+        class="
+        grid
+        md:grid-cols-2
+        xl:grid-cols-5
+        gap-6
+        "
+      >
+
+
+
+
+        <!-- ================= CARD 1 ================= -->
+
+        <div
+          class="
+          experience-card
+          glass
+          rounded-[2rem]
+          p-7
+          reveal
+          relative
+          overflow-hidden
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            🏆
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            leading-snug
+            mb-3
+            "
+          >
+
+            CyberCon CTF Competition
+
+          </h3>
+
+
+
+
+          <!-- SUBTITLE -->
+
+          <p
+            class="
+            text-gray-400
+            leading-relaxed
+            mb-6
+            "
+          >
+
+            ATA LEO Team, IIUC
+
+          </p>
+
+
+
+
+          <!-- DATE -->
+
+          <div
+            class="
+            inline-flex
+            items-center
+            px-4
+            py-2
+            rounded-full
+            bg-[#b7f36b]/10
+            text-[#d8ffad]
+            text-sm
+            "
+          >
+
+            Jan 2022
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- ================= CARD 2 ================= -->
+
+        <div
+          class="
+          experience-card
+          glass
+          rounded-[2rem]
+          p-7
+          reveal
+          relative
+          overflow-hidden
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            💼
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            leading-snug
+            mb-3
+            "
+          >
+
+            Data Entry Associate
+
+          </h3>
+
+
+
+
+          <!-- SUBTITLE -->
+
+          <p
+            class="
+            text-gray-400
+            leading-relaxed
+            mb-6
+            "
+          >
+
+            Insight Pro Service (Remote)
+
+          </p>
+
+
+
+
+          <!-- DATE -->
+
+          <div
+            class="
+            inline-flex
+            items-center
+            px-4
+            py-2
+            rounded-full
+            bg-[#b7f36b]/10
+            text-[#d8ffad]
+            text-sm
+            "
+          >
+
+            Apr 2024 – Jan 2026
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- ================= CARD 3 ================= -->
+
+        <div
+          class="
+          experience-card
+          glass
+          rounded-[2rem]
+          p-7
+          reveal
+          relative
+          overflow-hidden
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            &lt;/&gt;
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            leading-snug
+            mb-3
+            "
+          >
+
+            Flutter Training Programme
+
+          </h3>
+
+
+
+
+          <!-- SUBTITLE -->
+
+          <p
+            class="
+            text-gray-400
+            leading-relaxed
+            mb-6
+            "
+          >
+
+            EDGE Training Programme, IIUC
+
+          </p>
+
+
+
+
+          <!-- DATE -->
+
+          <div
+            class="
+            inline-flex
+            items-center
+            px-4
+            py-2
+            rounded-full
+            bg-[#b7f36b]/10
+            text-[#d8ffad]
+            text-sm
+            "
+          >
+
+            Sept 2024 – Dec 2024
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- ================= CARD 4 ================= -->
+
+        <div
+          class="
+          experience-card
+          glass
+          rounded-[2rem]
+          p-7
+          reveal
+          relative
+          overflow-hidden
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            ✎
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            leading-snug
+            mb-3
+            "
+          >
+
+            Content Writer
+
+          </h3>
+
+
+
+
+          <!-- SUBTITLE -->
+
+          <p
+            class="
+            text-gray-400
+            leading-relaxed
+            mb-6
+            "
+          >
+
+            Optimal Research (Remote)
+
+          </p>
+
+
+
+
+          <!-- DATE -->
+
+          <div
+            class="
+            inline-flex
+            items-center
+            px-4
+            py-2
+            rounded-full
+            bg-[#b7f36b]/10
+            text-[#d8ffad]
+            text-sm
+            "
+          >
+
+            Feb 2025
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- ================= CARD 5 ================= -->
+
+        <div
+          class="
+          experience-card
+          glass
+          rounded-[2rem]
+          p-7
+          reveal
+          relative
+          overflow-hidden
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            👥
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            leading-snug
+            mb-3
+            "
+          >
+
+            Member, IIUC CSE Club
+
+          </h3>
+
+
+
+
+          <!-- SUBTITLE -->
+
+          <p
+            class="
+            text-gray-400
+            leading-relaxed
+            mb-6
+            "
+          >
+
+            Executive Committee, IIUC
+
+          </p>
+
+
+
+
+          <!-- DATE -->
+
+          <div
+            class="
+            inline-flex
+            items-center
+            px-4
+            py-2
+            rounded-full
+            bg-[#b7f36b]/10
+            text-[#d8ffad]
+            text-sm
+            "
+          >
+
+            Aug 2025 – Feb 2026
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= PROJECTS SECTION ================= -->
+
+  <section
+    id="projects"
+
+    class="
+    py-28
+    relative
+    overflow-hidden
+    "
+  >
+
+    <!-- ================= BACKGROUND EFFECT ================= -->
+
+    <div
+      class="
+      hero-orb
+      w-[400px]
+      h-[400px]
+      bg-[#b7f36b]/5
+      top-[-150px]
+      left-[-150px]
+      "
+    ></div>
+
+
+
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div
+      class="
+      max-w-7xl
+      mx-auto
+      px-6
+      relative
+      z-10
+      "
+    >
+
+
+
+
+      <!-- ================= SECTION TITLE ================= -->
+
+      <div
+        class="
+        text-center
+        mb-20
+        reveal
+        "
+      >
+
+        <!-- SMALL TITLE -->
+
+        <p
+          class="
+          uppercase
+          tracking-[4px]
+          text-sm
+          accent-text
+          font-semibold
+          mb-5
+          "
+        >
+          Projects
+        </p>
+
+
+
+
+        <!-- MAIN TITLE -->
+
+        <h2
+          class="
+          text-5xl
+          sm:text-6xl
+          font-extrabold
+          "
+        >
+
+          Featured
+
+          <span class="accent-text">
+            Work
+          </span>
+
+        </h2>
+
+
+
+
+        <!-- DESCRIPTION -->
+
+        <p
+          class="
+          text-gray-400
+          max-w-2xl
+          mx-auto
+          mt-6
+          leading-relaxed
+          text-lg
+          "
+        >
+
+          A collection of academic, mobile application,
+          database, and collaborative development projects
+          demonstrating my problem-solving and technical skills.
+
+        </p>
+
+      </div>
+
+
+
+
+
+
+
+
+      <!-- ================= PROJECT GRID ================= -->
+
+      <div
+        class="
+        grid
+        md:grid-cols-2
+        xl:grid-cols-3
+        gap-8
+        "
+      >
+
+
+
+
+
+
+
+
+        <!-- ================= PROJECT 1 ================= -->
+
+        <div
+          class="
+          project-card
+          glass
+          rounded-[2rem]
+          overflow-hidden
+          reveal
+          group
+          "
+        >
+
+          <!-- TOP -->
+
+          <div
+            class="
+            h-56
+            bg-[#0d1325]
+            flex
+            items-center
+            justify-center
+            relative
+            overflow-hidden
+            "
+          >
+
+            <!-- BACKGROUND GLOW -->
+
+            <div
+              class="
+              absolute
+              w-[200px]
+              h-[200px]
+              rounded-full
+              bg-[#b7f36b]/10
+              blur-3xl
+              "
+            ></div>
+
+
+
+
+            <!-- ICON -->
+
+            <div
+              class="
+              text-7xl
+              accent-text
+              relative
+              z-10
+              transition
+              duration-500
+              group-hover:scale-110
+              "
+            >
+              🍔
+            </div>
+
+          </div>
+
+
+
+
+
+          <!-- CONTENT -->
+
+          <div class="p-8">
+
+            <!-- TITLE -->
+
+            <div
+              class="
+              flex
+              items-center
+              justify-between
+              mb-5
+              "
+            >
+
+              <h3
+                class="
+                text-2xl
+                font-bold
+                "
+              >
+                Food Ordering App
+              </h3>
+
+              <span
+                class="
+                text-3xl
+                accent-text
+                "
+              >
+                ↗
+              </span>
+
+            </div>
+
+
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="
+              text-gray-400
+              leading-relaxed
+              mb-7
+              "
+            >
+
+              Developed a modern food ordering mobile application
+              using Flutter and Dart with responsive UI and
+              ordering functionalities.
+
+            </p>
+
+
+
+
+
+            <!-- TAGS -->
+
+            <div class="flex flex-wrap gap-3">
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Flutter
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Dart
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                UI Design
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ================= PROJECT 2 ================= -->
+
+        <div
+          class="
+          project-card
+          glass
+          rounded-[2rem]
+          overflow-hidden
+          reveal
+          group
+          "
+        >
+
+          <!-- TOP -->
+
+          <div
+            class="
+            h-56
+            bg-[#0d1325]
+            flex
+            items-center
+            justify-center
+            relative
+            overflow-hidden
+            "
+          >
+
+            <!-- BACKGROUND GLOW -->
+
+            <div
+              class="
+              absolute
+              w-[200px]
+              h-[200px]
+              rounded-full
+              bg-[#b7f36b]/10
+              blur-3xl
+              "
+            ></div>
+
+
+
+
+            <!-- ICON -->
+
+            <div
+              class="
+              text-7xl
+              accent-text
+              relative
+              z-10
+              transition
+              duration-500
+              group-hover:scale-110
+              "
+            >
+              📱
+            </div>
+
+          </div>
+
+
+
+
+
+          <!-- CONTENT -->
+
+          <div class="p-8">
+
+            <!-- TITLE -->
+
+            <div
+              class="
+              flex
+              items-center
+              justify-between
+              mb-5
+              "
+            >
+
+              <h3
+                class="
+                text-2xl
+                font-bold
+                "
+              >
+                Flutter Mobile App
+              </h3>
+
+              <span
+                class="
+                text-3xl
+                accent-text
+                "
+              >
+                ↗
+              </span>
+
+            </div>
+
+
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="
+              text-gray-400
+              leading-relaxed
+              mb-7
+              "
+            >
+
+              Built a mobile application using Flutter and Dart
+              during the EDGE training programme with Firebase
+              integration and CRUD functionality.
+
+            </p>
+
+
+
+
+
+            <!-- TAGS -->
+
+            <div class="flex flex-wrap gap-3">
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Firebase
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                CRUD
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Flutter
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ================= PROJECT 3 ================= -->
+
+        <div
+          class="
+          project-card
+          glass
+          rounded-[2rem]
+          overflow-hidden
+          reveal
+          group
+          "
+        >
+
+          <!-- TOP -->
+
+          <div
+            class="
+            h-56
+            bg-[#0d1325]
+            flex
+            items-center
+            justify-center
+            relative
+            overflow-hidden
+            "
+          >
+
+            <!-- BACKGROUND GLOW -->
+
+            <div
+              class="
+              absolute
+              w-[200px]
+              h-[200px]
+              rounded-full
+              bg-[#b7f36b]/10
+              blur-3xl
+              "
+            ></div>
+
+
+
+
+            <!-- ICON -->
+
+            <div
+              class="
+              text-7xl
+              accent-text
+              relative
+              z-10
+              transition
+              duration-500
+              group-hover:scale-110
+              "
+            >
+              🧠
+            </div>
+
+          </div>
+
+
+
+
+
+          <!-- CONTENT -->
+
+          <div class="p-8">
+
+            <!-- TITLE -->
+
+            <div
+              class="
+              flex
+              items-center
+              justify-between
+              mb-5
+              "
+            >
+
+              <h3
+                class="
+                text-2xl
+                font-bold
+                "
+              >
+                Dining Philosopher Problem
+              </h3>
+
+              <span
+                class="
+                text-3xl
+                accent-text
+                "
+              >
+                ↗
+              </span>
+
+            </div>
+
+
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="
+              text-gray-400
+              leading-relaxed
+              mb-7
+              "
+            >
+
+              Implemented the Dining Philosopher problem
+              using Flutter to demonstrate process synchronization
+              and scheduling concepts.
+
+            </p>
+
+
+
+
+
+            <!-- TAGS -->
+
+            <div class="flex flex-wrap gap-3">
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                OS Concepts
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Flutter
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Scheduling
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ================= PROJECT 4 ================= -->
+
+        <div
+          class="
+          project-card
+          glass
+          rounded-[2rem]
+          overflow-hidden
+          reveal
+          group
+          "
+        >
+
+          <!-- TOP -->
+
+          <div
+            class="
+            h-56
+            bg-[#0d1325]
+            flex
+            items-center
+            justify-center
+            relative
+            overflow-hidden
+            "
+          >
+
+            <!-- BACKGROUND GLOW -->
+
+            <div
+              class="
+              absolute
+              w-[200px]
+              h-[200px]
+              rounded-full
+              bg-[#b7f36b]/10
+              blur-3xl
+              "
+            ></div>
+
+
+
+
+            <!-- ICON -->
+
+            <div
+              class="
+              text-7xl
+              accent-text
+              relative
+              z-10
+              transition
+              duration-500
+              group-hover:scale-110
+              "
+            >
+              🏥
+            </div>
+
+          </div>
+
+
+
+
+
+          <!-- CONTENT -->
+
+          <div class="p-8">
+
+            <!-- TITLE -->
+
+            <div
+              class="
+              flex
+              items-center
+              justify-between
+              mb-5
+              "
+            >
+
+              <h3
+                class="
+                text-2xl
+                font-bold
+                "
+              >
+                Hospital Resource System
+              </h3>
+
+              <span
+                class="
+                text-3xl
+                accent-text
+                "
+              >
+                ↗
+              </span>
+
+            </div>
+
+
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="
+              text-gray-400
+              leading-relaxed
+              mb-7
+              "
+            >
+
+              Designed a hospital resource management database
+              system using MySQL for efficient resource allocation
+              and data management.
+
+            </p>
+
+
+
+
+
+            <!-- TAGS -->
+
+            <div class="flex flex-wrap gap-3">
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                MySQL
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Database
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                ER Design
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ================= PROJECT 5 ================= -->
+
+        <div
+          class="
+          project-card
+          glass
+          rounded-[2rem]
+          overflow-hidden
+          reveal
+          group
+          "
+        >
+
+          <!-- TOP -->
+
+          <div
+            class="
+            h-56
+            bg-[#0d1325]
+            flex
+            items-center
+            justify-center
+            relative
+            overflow-hidden
+            "
+          >
+
+            <!-- BACKGROUND GLOW -->
+
+            <div
+              class="
+              absolute
+              w-[200px]
+              h-[200px]
+              rounded-full
+              bg-[#b7f36b]/10
+              blur-3xl
+              "
+            ></div>
+
+
+
+
+            <!-- ICON -->
+
+            <div
+              class="
+              text-7xl
+              accent-text
+              relative
+              z-10
+              transition
+              duration-500
+              group-hover:scale-110
+              "
+            >
+              ☁
+            </div>
+
+          </div>
+
+
+
+
+
+          <!-- CONTENT -->
+
+          <div class="p-8">
+
+            <!-- TITLE -->
+
+            <div
+              class="
+              flex
+              items-center
+              justify-between
+              mb-5
+              "
+            >
+
+              <h3
+                class="
+                text-2xl
+                font-bold
+                "
+              >
+                Firebase Student System
+              </h3>
+
+              <span
+                class="
+                text-3xl
+                accent-text
+                "
+              >
+                ↗
+              </span>
+
+            </div>
+
+
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="
+              text-gray-400
+              leading-relaxed
+              mb-7
+              "
+            >
+
+              Developed a Firebase-based system to store,
+              manage, and retrieve student information
+              efficiently.
+
+            </p>
+
+
+
+
+
+            <!-- TAGS -->
+
+            <div class="flex flex-wrap gap-3">
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Firebase
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Cloud
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Data
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ================= PROJECT 6 ================= -->
+
+        <div
+          class="
+          project-card
+          glass
+          rounded-[2rem]
+          overflow-hidden
+          reveal
+          group
+          "
+        >
+
+          <!-- TOP -->
+
+          <div
+            class="
+            h-56
+            bg-[#0d1325]
+            flex
+            items-center
+            justify-center
+            relative
+            overflow-hidden
+            "
+          >
+
+            <!-- BACKGROUND GLOW -->
+
+            <div
+              class="
+              absolute
+              w-[200px]
+              h-[200px]
+              rounded-full
+              bg-[#b7f36b]/10
+              blur-3xl
+              "
+            ></div>
+
+
+
+
+            <!-- ICON -->
+
+            <div
+              class="
+              text-7xl
+              accent-text
+              relative
+              z-10
+              transition
+              duration-500
+              group-hover:scale-110
+              "
+            >
+              🚁
+            </div>
+
+          </div>
+
+
+
+
+
+          <!-- CONTENT -->
+
+          <div class="p-8">
+
+            <!-- TITLE -->
+
+            <div
+              class="
+              flex
+              items-center
+              justify-between
+              mb-5
+              "
+            >
+
+              <h3
+                class="
+                text-2xl
+                font-bold
+                "
+              >
+                Drone Project
+              </h3>
+
+              <span
+                class="
+                text-3xl
+                accent-text
+                "
+              >
+                ↗
+              </span>
+
+            </div>
+
+
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="
+              text-gray-400
+              leading-relaxed
+              mb-7
+              "
+            >
+
+              Collaborated in a team to assemble a functional drone
+              and prepared technical reports and project documentation.
+
+            </p>
+
+
+
+
+
+            <!-- TAGS -->
+
+            <div class="flex flex-wrap gap-3">
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Hardware
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Teamwork
+              </span>
+
+              <span
+                class="
+                skill-tag
+                px-4
+                py-2
+                rounded-full
+                border
+                border-white/5
+                text-sm
+                "
+              >
+                Documentation
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= SKILLS SECTION ================= -->
+
+  <section
+    id="skills"
+
+    class="
+    py-28
+    relative
+    overflow-hidden
+    "
+  >
+
+    <!-- ================= BACKGROUND EFFECT ================= -->
+
+    <div
+      class="
+      hero-orb
+      w-[350px]
+      h-[350px]
+      bg-[#b7f36b]/5
+      top-[-120px]
+      right-[-120px]
+      "
+    ></div>
+
+
+
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div
+      class="
+      max-w-7xl
+      mx-auto
+      px-6
+      relative
+      z-10
+      "
+    >
+
+
+
+
+      <!-- ================= SECTION TITLE ================= -->
+
+      <div
+        class="
+        text-center
+        mb-20
+        reveal
+        "
+      >
+
+        <!-- SMALL TITLE -->
+
+        <p
+          class="
+          uppercase
+          tracking-[4px]
+          text-sm
+          accent-text
+          font-semibold
+          mb-5
+          "
+        >
+          Skills
+        </p>
+
+
+
+
+        <!-- MAIN TITLE -->
+
+        <h2
+          class="
+          text-5xl
+          sm:text-6xl
+          font-extrabold
+          "
+        >
+
+          Technical
+
+          <span class="accent-text">
+            Skills
+          </span>
+
+        </h2>
+
+
+
+
+        <!-- DESCRIPTION -->
+
+        <p
+          class="
+          text-gray-400
+          max-w-2xl
+          mx-auto
+          mt-6
+          leading-relaxed
+          text-lg
+          "
+        >
+
+          Technologies, tools, and capabilities I use
+          to develop modern applications, solve problems,
+          and build scalable solutions.
+
+        </p>
+
+      </div>
+
+
+
+
+
+
+
+
+      <!-- ================= SKILLS GRID ================= -->
+
+      <div
+        class="
+        grid
+        md:grid-cols-2
+        xl:grid-cols-4
+        gap-8
+        "
+      >
+
+
+
+
+
+
+
+
+        <!-- ================= SKILL CATEGORY 1 ================= -->
+
+        <div
+          class="
+          glass
+          rounded-[2rem]
+          p-8
+          reveal
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            💻
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            mb-6
+            "
+          >
+            Programming
+          </h3>
+
+
+
+
+          <!-- TAGS -->
+
+          <div class="flex flex-wrap gap-3">
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              C
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              C++
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Python
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Dart
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              PHP
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ================= SKILL CATEGORY 2 ================= -->
+
+        <div
+          class="
+          glass
+          rounded-[2rem]
+          p-8
+          reveal
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            📱
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            mb-6
+            "
+          >
+            Mobile Development
+          </h3>
+
+
+
+
+          <!-- TAGS -->
+
+          <div class="flex flex-wrap gap-3">
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Flutter
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Firebase
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              CRUD
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              UI Design
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              API
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ================= SKILL CATEGORY 3 ================= -->
+
+        <div
+          class="
+          glass
+          rounded-[2rem]
+          p-8
+          reveal
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            🗄
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            mb-6
+            "
+          >
+            Database & Tools
+          </h3>
+
+
+
+
+          <!-- TAGS -->
+
+          <div class="flex flex-wrap gap-3">
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              MySQL
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Cloudinary
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              MATLAB
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              GitHub
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Firebase
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- ================= SKILL CATEGORY 4 ================= -->
+
+        <div
+          class="
+          glass
+          rounded-[2rem]
+          p-8
+          reveal
+          "
+        >
+
+          <!-- ICON -->
+
+          <div
+            class="
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#b7f36b]/10
+            border
+            border-[#b7f36b]/10
+            flex
+            items-center
+            justify-center
+            text-3xl
+            accent-text
+            mb-8
+            "
+          >
+            🚀
+          </div>
+
+
+
+
+          <!-- TITLE -->
+
+          <h3
+            class="
+            text-2xl
+            font-bold
+            mb-6
+            "
+          >
+            Soft Skills
+          </h3>
+
+
+
+
+          <!-- TAGS -->
+
+          <div class="flex flex-wrap gap-3">
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Communication
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Team Work
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Problem Solving
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Management
+            </span>
+
+            <span class="skill-tag px-4 py-2 rounded-full border border-white/5 text-sm">
+              Leadership
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+
+  <section
+    id="contact"
+
+    class="
+    py-28
+    relative
+    overflow-hidden
+    "
+  >
+
+    <!-- BACKGROUND EFFECT -->
+
+    <div
+      class="
+      hero-orb
+      w-[450px]
+      h-[450px]
+      bg-[#b7f36b]/5
+      bottom-[-180px]
+      left-[-180px]
+      "
+    ></div>
+
+
+
+
+
+    <!-- MAIN CONTAINER -->
+
+    <div
+      class="
+      max-w-5xl
+      mx-auto
+      px-6
+      relative
+      z-10
+      "
+    >
+
+
+
+
+      <!-- SECTION TITLE -->
+
+      <div
+        class="
+        text-center
+        mb-20
+        reveal
+        "
+      >
+
+        <p
+          class="
+          uppercase
+          tracking-[4px]
+          text-sm
+          accent-text
+          font-semibold
+          mb-5
+          "
+        >
+          Contact
+        </p>
+
+
+
+
+
+        <h2
+          class="
+          text-5xl
+          sm:text-6xl
+          font-extrabold
+          "
+        >
+
+          Let’s
+
+          <span class="accent-text">
+            Connect
+          </span>
+
+        </h2>
+
+
+
+
+
+        <p
+          class="
+          text-gray-400
+          max-w-2xl
+          mx-auto
+          mt-6
+          leading-relaxed
+          text-lg
+          "
+        >
+
+          Feel free to contact me for collaboration,
+          opportunities, projects, or professional networking.
+
+        </p>
+
+      </div>
+
+
+
+
+
+
+
+
+      <!-- CONTACT CARD -->
+
+      <div
+        class="
+        glass
+        rounded-[2rem]
+        p-8
+        sm:p-12
+        reveal
+        "
+      >
+
+        <div
+          class="
+          grid
+          lg:grid-cols-2
+          gap-12
+          items-start
+          "
+        >
+
+
+
+
+
+
+
+
+          <!-- LEFT SIDE -->
+
+          <div>
+
+            <!-- TITLE -->
+
+            <h3
+              class="
+              text-3xl
+              font-bold
+              mb-6
+              "
+            >
+
+              Let’s talk about your next project.
+
+            </h3>
+
+
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="
+              text-gray-400
+              leading-relaxed
+              text-lg
+              mb-10
+              "
+            >
+
+              I’m always interested in discussing
+              software development, Flutter applications,
+              collaborative projects, and new opportunities.
+
+            </p>
+
+
+
+
+
+            <!-- CONTACT ITEMS -->
+
+            <div class="space-y-6">
+
+
+
+
+              <!-- EMAIL -->
+
+              <div
+                class="
+                flex
+                items-center
+                gap-5
+                "
+              >
+
+                <div
+                  class="
+                  w-14
+                  h-14
+                  rounded-2xl
+                  bg-[#b7f36b]/10
+                  flex
+                  items-center
+                  justify-center
+                  accent-text
+                  text-xl
+                  "
+                >
+                  ✉
+                </div>
+
+                <div>
+
+                  <p class="text-gray-500 text-sm mb-1">
+                    Email
+                  </p>
+
+                  <a
+                    href="mailto:anaychowdhury10@gmail.com"
+
+                    class="
+                    text-lg
+                    hover:text-[#b7f36b]
+                    transition
+                    "
+                  >
+                    anaychowdhury10@gmail.com
+                  </a>
+
+                </div>
+
+              </div>
+
+
+
+
+
+
+
+              <!-- PHONE -->
+
+              <div
+                class="
+                flex
+                items-center
+                gap-5
+                "
+              >
+
+                <div
+                  class="
+                  w-14
+                  h-14
+                  rounded-2xl
+                  bg-[#b7f36b]/10
+                  flex
+                  items-center
+                  justify-center
+                  accent-text
+                  text-xl
+                  "
+                >
+                  ☎
+                </div>
+
+                <div>
+
+                  <p class="text-gray-500 text-sm mb-1">
+                    Phone
+                  </p>
+
+                  <p class="text-lg">
+                    +880 1791 621 773
+                  </p>
+
+                </div>
+
+              </div>
+
+
+
+
+
+
+
+
+              <!-- LOCATION -->
+
+              <div
+                class="
+                flex
+                items-center
+                gap-5
+                "
+              >
+
+                <div
+                  class="
+                  w-14
+                  h-14
+                  rounded-2xl
+                  bg-[#b7f36b]/10
+                  flex
+                  items-center
+                  justify-center
+                  accent-text
+                  text-xl
+                  "
+                >
+                  ⌖
+                </div>
+
+                <div>
+
+                  <p class="text-gray-500 text-sm mb-1">
+                    Location
+                  </p>
+
+                  <p class="text-lg">
+                    Chittagong, Bangladesh
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <!-- RIGHT SIDE -->
+
+          <form
+            id="contactForm"
+
+            class="
+            space-y-6
+            "
+          >
+
+            <!-- NAME -->
+
+            <div>
+
+              <label
+                class="
+                block
+                text-sm
+                text-gray-400
+                mb-3
+                "
+              >
+                Full Name
+              </label>
+
+              <input
+                type="text"
+
+                placeholder="Enter your full name"
+
+                required
+
+                class="
+                input-field
+                w-full
+                px-5
+                py-4
+                rounded-2xl
+                "
+              >
+
+            </div>
+
+
+
+
+
+
+
+            <!-- EMAIL -->
+
+            <div>
+
+              <label
+                class="
+                block
+                text-sm
+                text-gray-400
+                mb-3
+                "
+              >
+                Email Address
+              </label>
+
+              <input
+                type="email"
+
+                placeholder="Enter your email"
+
+                required
+
+                class="
+                input-field
+                w-full
+                px-5
+                py-4
+                rounded-2xl
+                "
+              >
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- MESSAGE -->
+
+            <div>
+
+              <label
+                class="
+                block
+                text-sm
+                text-gray-400
+                mb-3
+                "
+              >
+                Message
+              </label>
+
+              <textarea
+                rows="6"
+
+                placeholder="Write your message..."
+
+                required
+
+                class="
+                input-field
+                w-full
+                px-5
+                py-4
+                rounded-2xl
+                resize-none
+                "
+              ></textarea>
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- BUTTON -->
+
+            <button
+              type="submit"
+
+              class="
+              primary-btn
+              w-full
+              py-4
+              rounded-2xl
+              font-bold
+              text-lg
+              "
+            >
+
+              Send Message
+
+            </button>
+
+
+
+
+
+
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <p
+              id="formMessage"
+
+              class="
+              hidden
+              text-center
+              text-[#d8ffad]
+              font-medium
+              "
+            >
+
+              Thank you! Your message has been submitted successfully.
+
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer
+    class="
+    py-10
+    border-t
+    border-white/5
+    "
+  >
+
+    <div
+      class="
+      max-w-7xl
+      mx-auto
+      px-6
+      flex
+      flex-col
+      md:flex-row
+      items-center
+      justify-between
+      gap-6
+      "
+    >
+
+      <!-- LEFT -->
+
+      <div>
+
+        <h3
+          class="
+          text-2xl
+          font-extrabold
+          "
+        >
+
+          ANAY<span class="accent-text">.</span>
+
+        </h3>
+
+        <p
+          class="
+          text-gray-500
+          mt-2
+          "
+        >
+          Designed & Developed by Anay Chowdhury
+        </p>
+
+      </div>
+
+
+
+
+
+
+      <!-- RIGHT -->
+
+      <div
+        class="
+        flex
+        items-center
+        gap-4
+        "
+      >
+
+        <a
+          href="https://github.com/anay004"
+
+          target="_blank"
+
+          class="
+          social-icon
+          glass
+          w-12
+          h-12
+          rounded-xl
+          flex
+          items-center
+          justify-center
+          "
+        >
+          G
+        </a>
+
+
+
+
+
+        <a
+          href="https://linkedin.com/in/anay-chowdhury"
+
+          target="_blank"
+
+          class="
+          social-icon
+          glass
+          w-12
+          h-12
+          rounded-xl
+          flex
+          items-center
+          justify-center
+          "
+        >
+          in
+        </a>
+
+
+
+
+
+        <a
+          href="mailto:anaychowdhury10@gmail.com"
+
+          class="
+          social-icon
+          glass
+          w-12
+          h-12
+          rounded-xl
+          flex
+          items-center
+          justify-center
+          "
+        >
+          ✉
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* ================= MOBILE MENU ================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+
+
+    menuBtn.addEventListener("click", () => {
+
+      mobileMenu.classList.toggle("open");
+
+      if(mobileMenu.classList.contains("open")){
+
+        menuBtn.innerHTML = "×";
+
+      }
+
+      else{
+
+        menuBtn.innerHTML = "☰";
+
+      }
+
+    });
+
+
+
+
+
+    mobileLinks.forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("open");
+
+        menuBtn.innerHTML = "☰";
+
+      });
+
+    });
+
+
+
+
+
+
+
+
+
+    /* ================= REVEAL ANIMATION ================= */
+
+    const reveals = document.querySelectorAll(".reveal");
+
+
+
+    function revealOnScroll(){
+
+      reveals.forEach(item => {
+
+        const windowHeight = window.innerHeight;
+
+        const revealTop = item.getBoundingClientRect().top;
+
+        const revealPoint = 100;
+
+        if(revealTop < windowHeight - revealPoint){
+
+          item.classList.add("show");
+
+        }
+
+      });
+
+    }
+
+
+
+
+
+
+
+
+
+    /* ================= ACTIVE NAVBAR ================= */
+
+    const sections = document.querySelectorAll("section");
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+
+
+    function activeNavOnScroll(){
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 140;
+
+        if(scrollY >= sectionTop){
+
+          current = section.getAttribute("id");
+
+        }
+
+      });
+
+
+
+
+      navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+
+          link.classList.add("active");
+
+        }
+
+      });
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /* ================= CONTACT FORM ================= */
+
+    const contactForm = document.getElementById("contactForm");
+
+    const formMessage = document.getElementById("formMessage");
+
+
+
+    contactForm.addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      formMessage.classList.remove("hidden");
+
+      contactForm.reset();
+
+      setTimeout(() => {
+
+        formMessage.classList.add("hidden");
+
+      }, 4000);
+
+    });
+
+
+
+
+
+
+
+
+
+
+    /* ================= INITIAL LOAD ================= */
+
+    window.addEventListener("load", () => {
+
+      revealOnScroll();
+
+      activeNavOnScroll();
+
+    });
+
+
+
+
+
+
+
+
+
+
+    /* ================= SCROLL EVENTS ================= */
+
+    window.addEventListener("scroll", () => {
+
+      revealOnScroll();
+
+      activeNavOnScroll();
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
